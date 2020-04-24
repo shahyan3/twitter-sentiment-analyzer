@@ -1,9 +1,11 @@
 
-Introduction 
+# twitter-sentiment-analyzer
 The main purpose of the application is to query hashtags searched on Twitter then analyse the sentiment and display in a graph on screen. 
   
 The basic architecture is as follows
 
+ 
+![Microservices](https://i.imgur.com/ZkYJWdW.png)
 
 
 The main objective in the development was to ensure the application is elastic, capable of handling varying loads by users in a smooth manner to ensure the user doesn’t feel too much latency while using the app or the app crashing as a whole. 
@@ -24,8 +26,6 @@ Most notably the analysis server does much of the computing to generate load.  T
 The twitter stream is distributed by the load balancer and received by analysis servers.
 
 
-
-
 Auto Scaling policy
 Step scaling policy is implemented to ensure the application can scale in/out successfully. This policy fits nicely with our solution because it allows to set flags at certain cpu loads that trigger new analysis servers to spin up and ensure the application keeps running smoothly. 
 
@@ -39,6 +39,7 @@ Upon testing and development it was noticed that the application’s cpu utlizat
 
 The reason for only removing one instance less than 60% of cpu utilization is to stay conservative and ensure that the application is not scaling in too quickly.
 
+![autoscaling](https://i.imgur.com/1KISnmK.png)
 
 
 This graph shows when the server hits greater than 70% average cpu utilization two instances are added and therefore the cpu utilization aggressively falls to safe levels.
@@ -47,6 +48,3 @@ Technologies
 The main technologies used for this project were nodejs for backend developement, pug as a template engine, and css, jquery for the frontend design and development. Mysql database was used for peristence.
 
 The key technology to discuss here is the choice of RDBS over other Databases. The main reason MYSQL was used for this application is because it fits the overall use case I.e. User’s want to analyze sentiment score based on filters. For us, using RDBS is good fit because it gives us the flexibility to our enchance the application with new features such as generating reports of statistics and comparison matrix of filters and sentiment scores in the future if we choose too.
-
- 
-# twitter-sentiment-analyzer
