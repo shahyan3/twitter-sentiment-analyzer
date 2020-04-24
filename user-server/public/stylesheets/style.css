@@ -1,0 +1,90 @@
+* {
+  padding:0;
+  margin:0;
+}
+html {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+ 
+a {
+  color: #00B7FF;
+}
+
+.wrapper {
+  display: flex;
+   height:100vh;
+
+ 
+}
+.section1 {
+ background-color:red;
+  flex:50%;
+  text-align: center;
+  padding:1rem;
+}
+.section2 {
+   flex:50%;
+  display: flex;
+  flex-direction: column;
+}
+
+ .col1  {
+   padding: 1rem;
+   height:70%;
+ }
+ .graph {
+   text-align: center;
+ }
+ .graph h1 {
+   padding:1rem;
+ }
+ #searchSentiment-form {
+   margin:1rem 5rem;
+ }
+#searchSentiment-form input, #searchSentiment-form button {
+  padding: 1rem;
+}
+#tweetsWrap {
+  background-color: #f8f8f8;
+  padding:2rem;
+}
+#sentimentScore {
+  padding:0.5rem 0;
+}
+.section1 h2 {
+  font-size: 1.6rem;
+}
+
+#searchStop-form button {
+ position: relative;
+ top: -47px;
+
+
+ left:240px;
+}
+.section1 h2 {
+  padding: 1rem;
+  position: relative;
+  left:-40px;
+}
+#stopBtn, #startBtn {
+  padding: 0.5rem;
+}
+
+#stopBtn {
+  position: relative;
+  top: -42px;
+  left:220px;
+}
+
+#searchedTerm {
+  padding: 1rem;
+}
+
+.section2 h2 {
+  position: relative;
+  top:15px;
+  left: 50px;
+  font-size:1.6rem;
+  padding: 1.5rem 0.5rem;
+ }

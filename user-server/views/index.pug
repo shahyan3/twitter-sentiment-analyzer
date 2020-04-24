@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  section.wrapper 
+    div.section1
+      h2 START TWITTER STREAM
+      form#search-form(action='javascript:startSearchForm()', method='POST')
+        input(type="text" id="searchedTerm" name="searchTerm" placeholder="#hastag" required)
+        button(type="submit"  name="startBtn" id="startBtn") Search
+
+      form#searchStop-form(action='javascript:stopSearchForm()', method='POST')
+        input(type="text" id="stopSearch" name="stopSearch" value="stopSearch" hidden)
+        button(type="submit" id="stopBtn" name="stopBtn") Stop
+
+    div.section2 
+      h2 ANALYZE SENTIMENT SCORE
+      form#searchSentiment-form(action='/', method='POST')
+        input(type="text" id="sentimentFilter" name="sentimentFilter" placeholder="Search a filter" required)
+        button(type="submit" id="sentiAnalysis" name="sentiAnalysis") ANALYZE
+       
+      div.col.col1
+        .graph
+          h1 Sentiment Graph 
+          canvas(id="myChart" width="400" height="200")
+        div#tweetsWrap
+
+          h3#sentimentScore= "SENTIMENT RESULT: " + score  
+
